@@ -1,3 +1,4 @@
+
 let produtos = [
     {
         nome: 'Item',
@@ -29,12 +30,5 @@ let produtos = [
     }
 ]
 
-function newProduct(){
-    let object = {
-        nome: prompt("produto"),
-        preco: parseFloat(prompt('valor'))
-    }
-    produtos.push(object)
-}
 
 

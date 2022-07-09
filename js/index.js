@@ -1,5 +1,6 @@
-//Função que cria o html base da minha aplicação
+// ****************** Array de produtos armazenado no database.js ***********************
 
+//Função que cria o html base da minha aplicação
 function createBasicHtml() {
     //Criação das tag: Main
     let body = document.querySelector("body")
@@ -12,7 +13,7 @@ function createBasicHtml() {
 
     //Criação da tag: img
     let img2 = document.createElement("img")
-    img2.src = '../img/walking.gif'
+    img2.src = 'https://img.icons8.com/color/2x/walking--v2.gif'
     img2.alt = 'man walking market'
     header.appendChild(img2)
 
@@ -23,7 +24,7 @@ function createBasicHtml() {
 
     //Criação da tag: img
     let img = document.createElement("img")
-    img.src = '../img/market.png'
+    img.src = 'https://img.icons8.com/external-filled-outline-wichaiwi/344/external-Market-business-filled-outline-wichaiwi.png'
     img.alt = 'market image'
     header.appendChild(img)
 
@@ -58,6 +59,7 @@ item(produtos)
 
 
 // Função que pega os itens do banco de dados individualmente e os trata, criando uma sessão de itens no html.
+//criação do ProductItem
 function createItem(produto) {
     price.push(produto.preco)
     let li = document.createElement("li")
@@ -76,14 +78,17 @@ function createItem(produto) {
 
 
 
-// Tratamento dos valores para efetuar a soma total
+//Function Soma, para somar o valor total dos produtos
 price.shift()
-const somarValores = price => ( price.reduce( (value,nextValue) => value + nextValue ) )
-let resultadoSoma = somarValores(price).toFixed(2)
+function soma(array) {
+    return array.reduce( (value,nextValue) => value + nextValue ) 
+}
+let resultadoSoma = soma(price).toFixed(2)
 
 
 
 // Função que cria meu "Resultado total" no html.
+// Criação do ProductDetails e ProductSome
 function totalHtml(resultado) {
     let section = document.querySelector(".container")
 
@@ -108,6 +113,7 @@ function totalHtml(resultado) {
 
 
 // Função que cria minha sessão " Finalizar Compra " no html.
+// Criação do ButtonEnd
 function createButton() {
     let select = document.querySelector(".productDetails")
 
