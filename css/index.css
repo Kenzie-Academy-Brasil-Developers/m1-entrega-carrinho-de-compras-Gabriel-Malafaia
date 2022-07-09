@@ -44,6 +44,7 @@ main{
     list-style: none;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
     height: 3em;
     margin-bottom: 1em;
     padding: 1em;
